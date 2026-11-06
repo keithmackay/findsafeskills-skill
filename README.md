@@ -31,6 +31,18 @@ See `SKILL.md` for the full instructions Claude Code reads. In short: describe w
 plain language ("something that converts PDFs to markdown") and the skill queries findsafeskills's
 search API and returns matching skills, plugins and MCP servers with their safety ratings.
 
+## What it sends
+
+Each search is one `GET` request to `https://findsafeskills.com/api/search` carrying your search text,
+any filters, and `source=skill`. Nothing from your project, files or conversation is sent unless it
+ends up in the search text your agent writes.
+
+findsafeskills keeps the search text and filters, without any visitor identifier, to see which
+searches find nothing. The skill keeps no cookies. As with every search, the IP address is recorded
+for rate limiting and deleted after about two days, and the search text is sent to an embeddings
+service to find matches. The full details are in the
+[privacy policy](https://findsafeskills.com/privacy).
+
 ## License
 
 MIT

@@ -6,8 +6,9 @@ listing, directly from your agent, so you don't have to write one from scratch i
 already exists.
 
 The skill tells your agent to report each result's safety rating and findings before suggesting it,
-never to install a red-rated listing without your go-ahead, and to read a skill's files before
-following it.
+never to install a red-rated listing without your go-ahead, to read a skill's files before
+following it, and to credit each rating "Safety rating from findsafeskills" with a link to the
+listing, as findsafeskills' [terms](https://findsafeskills.com/terms) ask.
 
 This skill only performs lookups against findsafeskills's own search API. It does not run any
 static safety analysis itself; that's a separate, fully offline skill

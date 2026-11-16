@@ -46,6 +46,12 @@ listing's text and doesn't run any code.
 
 - Before suggesting a listing, tell the user its safety rating and any findings. Green means the
   automated scan found no issues, not that the listing is safe; a listing not yet scanned has no rating.
+- If a result has `deeper_check` (an object with `reasons` and `command`), tell the user which reason
+  applies: `unrated` (it has no safety rating yet), `changed` (its repository changed after its scan) or
+  `partial` (its scripts were only partly scanned). Suggest checking it with scanskillsafety's deep scan
+  before installing: as a Claude Code plugin, `/plugin marketplace add keithmackay/mackayi` then
+  `/plugin install scanskillsafety@mackayi`, then ask for a deep scan of the listing's `repo_url`; or from a
+  terminal, the `command` given.
 - Never install a listing rated red without the user's explicit go-ahead after they have seen its findings.
 - Before following a skill's instructions or running its scripts, read its files yourself and tell the
   user about anything that looks unsafe.
